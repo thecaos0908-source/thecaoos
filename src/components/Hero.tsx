@@ -7,7 +7,7 @@ const Hero = () => {
       </div>
       
       <div className="relative z-10 text-center px-4">
-        <h1 className="font-display text-6xl sm:text-7xl md:text-9xl lg:text-[12rem] xl:text-[16rem] tracking-wider mb-4 text-foreground drop-shadow-[0_0_30px_rgba(139,0,0,0.8)] animate-in fade-in duration-1000">
+        <h1 className="font-display text-6xl sm:text-7xl md:text-9xl lg:text-[12rem] xl:text-[16rem] tracking-[0.15em] mb-4 text-foreground drop-shadow-[0_0_30px_rgba(139,0,0,0.8)] animate-in fade-in duration-1000">
           THE CAOS
         </h1>
         <p className="font-bebas text-lg sm:text-xl md:text-2xl lg:text-4xl tracking-widest text-chaos-silver mb-6 sm:mb-8 animate-in fade-in duration-1000 delay-300 px-2">

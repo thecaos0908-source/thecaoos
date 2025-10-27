@@ -28,7 +28,7 @@ const TicketCard = ({ title, price, description, features, highlighted = false, 
       )}
       {status && (
         <div className={`absolute top-0 left-0 font-bebas text-xs px-3 py-1 tracking-wider border-b border-r rounded-br-md backdrop-blur ${
-          status === 'disponível' ? 'bg-chaos-wine/20 text-chaos-wine border-chaos-wine' : status === 'em breve' ? 'bg-yellow-500/20 text-yellow-300 border-yellow-500/40' : 'bg-muted text-muted-foreground border-border'
+          status === 'disponível' ? 'bg-chaos-wine/20 text-chaos-wine border-chaos-wine' : status === 'em breve' ? 'bg-chaos-wine/20 text-chaos-wine border-chaos-wine' : 'bg-muted text-muted-foreground border-border'
         }`}>
           {status.toUpperCase()}
         </div>

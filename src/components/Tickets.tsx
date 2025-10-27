@@ -1,4 +1,25 @@
 import TicketCard from "./TicketCard";
+import { useScrollReveal } from "@/hooks/use-scroll-reveal";
+
+const TicketCardReveal = ({ ticket, index }: { ticket: any; index: number }) => {
+  const { ref, isVisible } = useScrollReveal(0.1);
+  
+  return (
+    <div
+      ref={ref}
+      className={`transition-all duration-700 md:opacity-100 md:translate-y-0 md:scale-100 ${
+        isVisible 
+          ? 'opacity-100 translate-y-0 scale-100' 
+          : 'opacity-0 translate-y-8 scale-95'
+      }`}
+      style={{ 
+        transitionDelay: `${index * 150}ms`
+      }}
+    >
+      <TicketCard {...ticket} />
+    </div>
+  );
+};
 
 const Tickets = () => {
   const now = new Date();
@@ -28,7 +49,7 @@ const Tickets = () => {
     },
   ] as const;
 
-  const testingAllAvailable = true; // habilita todos para teste
+  const testingAllAvailable = false; // desabilitado - usando datas reais
 
   const getStatus = (start: Date, end: Date): { status: 'esgotado' | 'em breve' | 'disponível'; disabled: boolean; label: string } => {
     if (testingAllAvailable) return { status: 'disponível', disabled: false, label: 'COMPRAR AGORA' };
@@ -72,7 +93,7 @@ const Tickets = () => {
         
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
           {tickets.map((ticket, index) => (
-            <TicketCard key={index} {...ticket} />
+            <TicketCardReveal key={index} ticket={ticket} index={index} />
           ))}
         </div>
       </div>
