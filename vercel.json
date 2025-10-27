@@ -1,0 +1,25 @@
+{
+  "version": 2,
+  "buildCommand": "npm run build",
+  "outputDirectory": "dist",
+  "framework": "vite",
+  "env": {
+    "MP_ACCESS_TOKEN": "APP_USR-8709275922573784-102619-20edb8b179924bf227645b16f89202be-2943677940",
+    "VITE_MP_PUBLIC_KEY": "APP_USR-9864c7b1-c6b7-4a0f-8893-9d10ebecef6a"
+  },
+  "build": {
+    "env": {
+      "VITE_USE_DB": "true",
+      "VITE_FIREBASE_API_KEY": "AIzaSyDvM0z18xQ0QgkoYIftFEPtPt_RV8MxC5Q",
+      "VITE_FIREBASE_AUTH_DOMAIN": "thecaos-67943.firebaseapp.com",
+      "VITE_FIREBASE_PROJECT_ID": "thecaos-67943",
+      "VITE_FIREBASE_STORAGE_BUCKET": "thecaos-67943.firebasestorage.app",
+      "VITE_FIREBASE_MESSAGING_SENDER_ID": "306804346111",
+      "VITE_FIREBASE_APP_ID": "1:306804346111:web:61e1abdb4b7d62668950ca"
+    }
+  },
+  "routes": [
+    { "handle": "filesystem" },
+    { "src": "/(.*)", "dest": "/index.html" }
+  ]
+}

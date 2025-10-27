@@ -1,0 +1,12 @@
+# Imagens do Carrossel
+
+Adicione suas imagens do local nesta pasta.
+
+Exemplos de nomes de arquivo:
+- local-1.jpg
+- local-2.jpg
+- local-3.jpg
+- interior-1.jpg
+- exterior-1.jpg
+
+As imagens aparecerão automaticamente no carrossel da página principal.
