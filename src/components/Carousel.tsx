@@ -1,6 +1,7 @@
 import { useCallback, useEffect, useState } from 'react';
 import useEmblaCarousel from 'embla-carousel-react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
+import { useScrollReveal } from '@/hooks/use-scroll-reveal';
 
 interface CarouselProps {
   images: string[];
@@ -11,6 +12,8 @@ const Carousel = ({ images, title }: CarouselProps) => {
   const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true });
   const [selectedIndex, setSelectedIndex] = useState(0);
   const [scrollSnaps, setScrollSnaps] = useState<number[]>([]);
+  const { ref: revealRef, isVisible } = useScrollReveal(0.1);
+  const { ref: titleRef, isVisible: titleVisible } = useScrollReveal(0.1);
 
   const isGoogleMapsUrl = (url: string): boolean => {
     const lower = url.toLowerCase();
@@ -103,14 +106,28 @@ const Carousel = ({ images, title }: CarouselProps) => {
   return (
     <div className="w-full">
       {title && (
-        <div className="text-center mb-12 sm:mb-16">
+        <div 
+          ref={titleRef}
+          className={`text-center mb-12 sm:mb-16 transition-all duration-700 md:opacity-100 md:translate-y-0 md:scale-100 ${
+            titleVisible
+              ? 'opacity-100 translate-y-0 scale-100'
+              : 'opacity-0 translate-y-8 scale-95'
+          }`}
+        >
           <h2 className="font-bebas text-4xl sm:text-5xl md:text-6xl lg:text-8xl tracking-wider mb-4 text-center text-foreground leading-tight">
             {title}
           </h2>
         </div>
       )}
       
-      <div className="relative">
+      <div 
+        ref={revealRef}
+        className={`relative transition-all duration-700 md:opacity-100 md:translate-y-0 md:scale-100 ${
+          isVisible
+            ? 'opacity-100 translate-y-0 scale-100'
+            : 'opacity-0 translate-y-8 scale-95'
+        }`}
+      >
         <div className="overflow-hidden rounded-xl border border-white/10 backdrop-blur" ref={emblaRef}>
           <div className="flex">
             {images.map((image, index) => (
