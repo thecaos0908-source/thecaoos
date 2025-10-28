@@ -47,8 +47,8 @@ const MP_API_BASE = import.meta.env.DEV ? '/mp' : '/api/mp';
 
 // ATENÇÃO: Para produção, usar o backend seguro (rotas /api/mp) com o Access Token no servidor.
 // Em desenvolvimento local, usamos um Access Token definido em VITE_MP_ACCESS_TOKEN ou caímos no token abaixo.
-const TEST_ACCESS_TOKEN = 'APP_USR-8709275922573784-102619-20edb8b179924bf227645b16f89202be-2943677940';
-const DEV_ACCESS_TOKEN = (import.meta as any).env?.VITE_MP_ACCESS_TOKEN || TEST_ACCESS_TOKEN;
+const PROD_ACCESS_TOKEN = 'APP_USR-7757464033938342-102520-8f91d085d282608eb13b944ffba009cd-72469214';
+const DEV_ACCESS_TOKEN = (import.meta as any).env?.VITE_MP_ACCESS_TOKEN || PROD_ACCESS_TOKEN;
 
 export const paymentService = {
     openPredefinedCheckout: (): void => {

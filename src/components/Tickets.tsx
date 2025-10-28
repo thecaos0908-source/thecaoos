@@ -34,18 +34,21 @@ const Tickets = () => {
       start: d('2025-11-10T00:00:00'),
       end: d('2025-11-20T23:59:59'),
       priceNum: 40,
+      externalLink: 'https://mpago.la/29mFwjc',
     },
     {
       title: "LOTE 2",
       start: d('2025-11-20T00:00:00'),
       end: d('2025-11-30T23:59:59'),
       priceNum: 60,
+      externalLink: 'https://mpago.la/33wXPuR',
     },
     {
       title: "LOTE 3",
       start: d('2025-11-30T00:00:00'),
       end: d('2025-12-19T23:59:59'),
       priceNum: 80,
+      externalLink: 'https://mpago.la/1TzZdgV',
     },
   ] as const;
 
@@ -78,6 +81,7 @@ const Tickets = () => {
       buttonLabel: label,
       disabled,
       buttonClassName: highlighted ? undefined : 'bg-chaos-wine/80 hover:bg-chaos-glow/90 border-2 border-chaos-wine/80 text-foreground',
+      externalLink: lot.externalLink,
     };
   });
 
